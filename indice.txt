@@ -63,7 +63,7 @@ CAPÍTULO 9: NÚMEROS
 9.2 Colecciones útiles para números.	
 9.3 Matrices y determinantes.	
 9.3 Sistemas de ecuaciones lineales.	
-9.3.1. Regla de Cramer	154
+9.3.1. Regla de Cramer	
 9.3.2. Método de Gauss Jordan	
 9.3.3. Método Gauss-Seidel	
 9.3 Fibonacci.	
