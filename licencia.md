@@ -4,7 +4,9 @@ Copyright (c) 2021 Luis Criado Fernández
 Por la presente se autoriza, de forma gratuita, a cualquier persona que haya obtenido una copia de este software y archivos de documentación asociados (el "Software"), a utilizar el Software sin restricción, incluyendo sin limitación los derechos de usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar, y/o vender copias de este Software, y permitir lo mismo a las personas a las que se les proporcione el Software, de acuerdo con las siguientes condiciones:
 
 Permisos: Uso privado/comercial, modificación y distribución
+
 Limitaciones: Responsabilidad y garantia
+
 Obligaciones: Referenciar al autor http://luis.criado.online/
 
 
