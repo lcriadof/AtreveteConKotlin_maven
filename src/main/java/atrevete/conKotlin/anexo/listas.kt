@@ -56,10 +56,7 @@ fun main(){
         print("[$posicion]${lista1[posicion]} ")
 
 
-    //   var arrayCampos=arrayOfNulls<String>(dim)  // creamos un array de tamaño dim
 
-
-    // numeros
 
     // listas inmutables   no hay algo del tipo intListOf
     var list = listOf(1,2,5,4,3)

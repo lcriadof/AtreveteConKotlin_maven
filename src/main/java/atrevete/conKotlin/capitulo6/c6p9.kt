@@ -7,10 +7,9 @@ package atrevete.conKotlin.capitulo6
 import kotlin.collections.HashMap
 
 interface ficheros { // 1
-    fun abrir():Boolean
+    fun usar()
     fun leer():String
-    fun <T>agregar(cadena: T):Boolean // 2
+    fun <T>agregar(vararg cadena:T):Boolean // 2
     fun borrarFichero():Boolean
     fun borrarTodoElContenido():Boolean
-    fun cerrar():Boolean
 }

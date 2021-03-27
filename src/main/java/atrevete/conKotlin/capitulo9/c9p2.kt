@@ -9,7 +9,7 @@ package atrevete.conKotlin.capitulo9
 fun main(){
 
     // vector
-    val A= IntArray(5, { i -> 0 })
+    val A= IntArray(5, { i -> 0 })   // o tambien    val A= Array<Int>(5,{i->0})
     println("\nA: "+A.joinToString()  )
 
     A[0]=5 // establecer valor
