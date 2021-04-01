@@ -7,10 +7,14 @@ package atrevete.conKotlin.capitulo7.fichero.txt
 import atrevete.conKotlin.capitulo6.ficheros
 import java.io.File
 import java.lang.Exception
-
+import atrevete.conKotlin.capitulo7.fichero.recursos
 
 fun main(){
-    var f=fichTexto("/tmp/kotlin/f6.txt")
+    val directorioRaiz:String="/txt/"
+    val url:String= recursos::class.java.getResource(directorioRaiz).path
+    println("url: $url")
+
+    var f=fichTexto(url+"f6.txt")
     f.usar()
     println("abrimos: "+f.usar())
     println("leemos: "+f.leer())
@@ -37,11 +41,12 @@ fun main(){
 class fichTexto(path:String): ficheros {
    var url:String=path
    var contenido:String=""
-   var fichero:File=File(url)
+   var fichero:File=File( url )
    var isUsable:Boolean=false
 
     override fun usar(){
        try {
+          // println("url: $url")
             if (fichero.exists() and fichero.isFile) { // 1
                 isUsable=true // 2
             }

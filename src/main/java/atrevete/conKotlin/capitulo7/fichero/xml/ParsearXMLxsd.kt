@@ -1,5 +1,6 @@
 package atrevete.conKotlin.capitulo7.fichero.xml
 
+import atrevete.conKotlin.capitulo7.fichero.recursos
 import org.xml.sax.ErrorHandler
 import org.xml.sax.SAXException
 import org.xml.sax.SAXParseException
@@ -56,18 +57,24 @@ object ParsearXMLxsd {
 
 fun main(){
 
-    val directorioRaiz:String="/tmp/kotlin/"
+    val directorioRaiz:String="/xml/"
+    val url:String= recursos::class.java.getResource(directorioRaiz).path
+       println(url)
 
-    val oParsear=ParsearXMLxsd
+    val oParsear=ParsearXMLxsd // objeto parseador
 
-    var ficheroXml=directorioRaiz+"/xml/B3h_TRF_v1.0.xml"
-    var ficheroXsd=directorioRaiz+"/xml/B3h_TRF_v1.0.xsd"
+    var ficheroXml=url+"B3h_TRF_v1.0.xml"
+    var ficheroXsd=url+"B3h_TRF_v1.0.xsd"
+
+
+
+
     println(oParsear.isBienFormado(ficheroXml,ficheroXsd))
 
-    ficheroXsd=directorioRaiz+"/xml/oec.xsd"
-    ficheroXml=directorioRaiz+"/xml/Alpha Centauri.xml"
+    ficheroXsd=url+"oec.xsd"
+    ficheroXml=url+"Alpha Centauri.xml"
     println(oParsear.isBienFormado(ficheroXml,ficheroXsd))
 
-    ficheroXml=directorioRaiz+"/xml/KOI-0316.xml"
+    ficheroXml=url+"KOI-0316.xml"
     println(oParsear.isBienFormado(ficheroXml,ficheroXsd))
 }

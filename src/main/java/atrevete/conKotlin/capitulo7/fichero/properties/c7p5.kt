@@ -54,11 +54,11 @@ class fichProperties(path:String): ficheros {
     override fun leer():String{
        if (isUsable) {
            try {
-               val keys: Enumeration<Any> = p.keys()
+               val keys: Enumeration<Any> = p.keys() //5
                while (keys.hasMoreElements()) {
                    val key = keys.nextElement()
                    // println(key.toString() + " = " + p.get(key))
-                   propiedades.put(key.toString(), p.get(key) as String)
+                   propiedades.put(key.toString(), p.get(key) as String) // 6
                }
                contenido = propiedades.toString()
 
@@ -69,12 +69,12 @@ class fichProperties(path:String): ficheros {
         return contenido
     }
 
-    override fun <T>agregar(vararg cadena:T):Boolean{ //  5
+    override fun <T>agregar(vararg cadena:T):Boolean{
         var bandera: Boolean = false
         if (isUsable) {
             try {
-                p.put(cadena.get(0), cadena.get(1)) // añadimos clave propiedad
-                p.store(FileOutputStream(url), "") // salvamos el fichero de propiedades actualizado
+                p.put(cadena.get(0), cadena.get(1)) //  7 /
+                p.store(FileOutputStream(url), "") // 8
                 bandera = true
             } catch (e: Exception) {
                 bandera = false

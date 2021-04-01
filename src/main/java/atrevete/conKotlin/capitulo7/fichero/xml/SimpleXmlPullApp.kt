@@ -2,20 +2,18 @@ package atrevete.conKotlin.capitulo7.fichero.xml.xml
 
 import atrevete.conKotlin.capitulo7.fichero.txt.fichTexto
 import org.xmlpull.v1.XmlPullParser
-import org.xmlpull.v1.XmlPullParserException
 import org.xmlpull.v1.XmlPullParserFactory
-import java.io.File
 import java.io.StringReader
-import javax.xml.parsers.SAXParserFactory
-
-import javax.xml.validation.SchemaFactory
+import atrevete.conKotlin.capitulo7.fichero.recursos
 
 
 
     fun main() {
+        val directorioRaiz:String="/xml/"
+        val url:String= recursos::class.java.getResource(directorioRaiz).path
+          println("url: $url")
 
-        val dir="/Datos/07_IDEA/AtreveteConKotlin_maven/src/main/resources/"
-        val ficheroXml=dir+"xml/B3h_TRF_v1.0.xml"
+        val ficheroXml=url+"B3h_TRF_v1.0.xml"
         var f= fichTexto(ficheroXml)
         f.usar()
         println("abrimos: "+f.usar())
