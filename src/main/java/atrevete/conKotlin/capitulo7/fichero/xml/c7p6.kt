@@ -16,18 +16,15 @@ import java.lang.Exception
 
 fun main(){
     val directorioRaiz:String="/xml/"
-    val url:String= recursos::class.java.getResource(directorioRaiz).path
+    val url:String= recursos::class.java.getResource(directorioRaiz).path // 1
     println("url: $url")
 
-    val ficheroXsd=url+"oec.xsd"   // B3h_TRF_v1.0, oec
-    val ficheroXml=url+"KOI-0316.xml"   // B3h_TRF_v1.0, Alpha Centauri  KOI-0316
-    var propiedades: MutableMap<String, String> = mutableMapOf() // inicializamos un Map mutable
-    val fxml=fichXML(ficheroXml,ficheroXsd,"planet",7,true)
+    val ficheroXsd=url+"oec.xsd"   // 2
+    val ficheroXml=url+"KOI-0316.xml"   // 3, pruebe también con Alpha Centauri
+    val fxml=fichXML(ficheroXml,ficheroXsd,"planet",7,true) // 4
     fxml.usar()
     fxml.leer()
     println(fxml.contenido)
-
-
 }
 
 
@@ -50,8 +47,8 @@ class fichXML(pathXml:String, pathXsd:String, var finTag:String, var dimension:I
         try {
             if (fichero.exists() and fichero.isFile and
                     ficheroXsd.exists() and ficheroXsd.isFile and
-                    oParsear.isBienFormado(url,url2) ) { // 1
-                isUsable=true // 2
+                    oParsear.isBienFormado(url,url2) ) {
+                isUsable=true
             }
         }
         catch (e: Exception) {

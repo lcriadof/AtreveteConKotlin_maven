@@ -11,10 +11,10 @@ import atrevete.conKotlin.capitulo7.fichero.recursos
 
 fun main(){
     val directorioRaiz:String="/txt/"
-    val url:String= recursos::class.java.getResource(directorioRaiz).path
+    val url:String= recursos::class.java.getResource(directorioRaiz).path //1
     println("url: $url")
 
-    var f=fichTexto(url+"f6.txt")
+    var f=fichTexto(url+"f6.txt") // 2
     f.usar()
     println("abrimos: "+f.usar())
     println("leemos: "+f.leer())
