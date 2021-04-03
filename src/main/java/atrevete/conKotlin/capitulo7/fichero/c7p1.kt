@@ -5,9 +5,6 @@ Autor: http://luis.criado.online/index.html
 package atrevete.conKotlin.capitulo7.fichero// c7p1.kt   gestion de logs
 import org.apache.logging.log4j.LogManager
 
-object recursos { // este objeto es para acceder a la zona de recursos del proyecto
-    fun main() {} // explicado en el último epígrafe del cap 4
-}
 
 class pruebaLog {
     companion object {
