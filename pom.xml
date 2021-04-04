@@ -178,6 +178,22 @@
             <artifactId>jena-core</artifactId>
             <version>3.16.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.hp.hpl.jena/jena -->
+        <dependency>
+            <groupId>com.hp.hpl.jena</groupId>
+            <artifactId>jena</artifactId>
+            <version>2.6.4</version>
+        </dependency>
+
+
+        <!-- AllegroGraph -->
+        <!-- https://mvnrepository.com/artifact/com.franz/agraph-java-client -->
+        <dependency>
+            <groupId>com.franz</groupId>
+            <artifactId>agraph-java-client</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+
 
         <!-- Servlets -->
         <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->

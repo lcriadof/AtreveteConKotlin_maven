@@ -4,6 +4,7 @@ Autor: http://luis.criado.online/index.html
  */
 package atrevete.conKotlin.capitulo7.fichero.rdf
 
+import atrevete.conKotlin.capitulo7.fichero.recursos
 import org.apache.jena.rdf.model.Model
 import org.apache.jena.rdf.model.ModelFactory
 import org.apache.jena.rdf.model.RDFNode
@@ -15,45 +16,41 @@ import java.io.FileOutputStream
 
 
 fun main(){
+    val model = ModelFactory.createDefaultModel()  //1 // Creamos un modelo vacio
 
-    // Creamos un modelo vacio
-    val model = ModelFactory.createDefaultModel()
-
-
-    // Creamos el recurso
     val personURI = "http://www.luis.criado.online"
-    val johnSmith = model.createResource(personURI)
+    val luisCriado = model.createResource(personURI) // 2  // Creamos el recurso
 
-    // Añadimos una propiedad
-    /*
-    val fullName:String="Luis Criado"
-    johnSmith.addProperty(VCARD.FN, fullName);
-     */
-    val fullName:String="luis.criado.fernandez@gmail.com"
-    johnSmith.addProperty(VCARD.EMAIL, fullName);
+    val nombre:String="Luis"
+    luisCriado.addProperty(VCARD.FN, nombre) // 3 Añadimos una propiedad
+
+    val nombreComleto:String="luis.criado.fernandez@gmail.com"
+    luisCriado.addProperty(VCARD.EMAIL, nombreComleto) // 4 Añadimos una propiedad
+
+    val directorioRaiz:String="/rdf/"
+    var url:String= recursos::class.java.getResource(directorioRaiz).path  // 4 definimos el path de trabajo
+    println("url: $url")  // 5 atencion el resultado se obtiene en la salida: target/classes/rdf/
+
+// --- escribimos
+    println("\n\nEscribimos")
+    var salida=File(url+"modelo2.rdf")
+    model.write(salida.outputStream()) // 6 escribimos el modelo en un fichero rdf
+    model.write(FileOutputStream(url+"modelo2otraforma.rdf")); // 7 alternativamente, de forma más compacta
 
 
-    // escribimos el modelo
-    var salida=File("/tmp/kotlin/modelo2.txt")
-     model.write(salida.outputStream())
-
-    // alternativamente
-       model.write(FileOutputStream("/tmp/kotlin/modelo2.rdf"));
+// ---- leemos
+    println("\n\nLeemos:")
+    val model2 = ModelFactory.createDefaultModel() // 8  Creamos un modelo vacio
+       model2.read(FileInputStream( url+"modelo2.rdf"), ""); // 9  importamos datos
 
 
-//***************hasta aqui generamos
+    val stmt = model2.listStatements().nextStatement() // 10 preparamos el modelo para lectura
 
-    // leemos
+    var subject = stmt.getSubject() // 11 obtenemos el sujeto
+    var predicate = stmt.getPredicate() //  12 obtenemos el predicado
+    var `object`: RDFNode = stmt.getObject() // 13 obtenemos el objetot
 
-    val model2 = ModelFactory.createDefaultModel() // Creamos un modelo vacio
-       model2.read(FileInputStream("/tmp/kotlin/modelo2.txt"), ""); // importamos datos
-
-    val iter = model2.listStatements()
-    val stmt = iter.nextStatement() // get next statement
-    val subject = stmt.getSubject() // get the subject
-    val predicate = stmt.getPredicate() // get the predicate
-    val `object`: RDFNode = stmt.getObject() // get the object
-
+    // mostramos la tripleta
     println("sujeto [" + subject.toString() + "]");
     println("predicado[" + predicate.toString() + "] ");
     if (`object` is Resource) {
@@ -68,21 +65,20 @@ fun main(){
 
     // unimos dos modelos
 
-    val modelA = ModelFactory.createDefaultModel() // Creamos un modelo vacio
-    val modelB = ModelFactory.createDefaultModel() // Creamos un modelo vacio
-
+    val modeloA = ModelFactory.createDefaultModel() // Creamos un modelo vacio
+    val modeloB = ModelFactory.createDefaultModel() // Creamos un modelo vacio
 
     // read the RDF/XML files
-    modelA.read(FileInputStream("/tmp/kotlin/modelo1.rdf"), "");
-    modelB.read(FileInputStream("/tmp/kotlin/modelo2.rdf"), "");
-
-
+    modeloA.read(FileInputStream(url+"modelo1.rdf"), "");
+    modeloB.read(FileInputStream(url+"modelo2.rdf"), "");
 
     // merge the Models
-    val modeloUnido: Model = modelA.union(modelB)
+    val modeloUnido: Model = modeloA.union(modeloB) // unimos dos modelos
 
 
-    modeloUnido.write(FileOutputStream("/tmp/kotlin/modeloUnido.rdf"), "RDF/XML-ABBREV");
+    modeloUnido.write(FileOutputStream("modeloUnido.rdf"), "RDF/XML-ABBREV");
+
+
 
 
 }
