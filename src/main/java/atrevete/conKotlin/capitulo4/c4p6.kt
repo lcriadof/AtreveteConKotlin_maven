@@ -10,8 +10,8 @@ import java.lang.Exception
 //   https://jamie.mccrindle.org/posts/exploring-kotlin-standard-library-part-2/
 fun main() {
     try {
-     if (File("/tmp/kotlin/f6.txt").exists()) {  // 1
-         File("/tmp/kotlin/f6.txt").delete()     // 2
+     if (File("/tmp/kotlin/f6.txt").exists()) {  // [1]
+         File("/tmp/kotlin/f6.txt").delete()     // [2]
      }
      File("/tmp/kotlin/f3.txt").copyTo(File("/tmp/kotlin/f6.txt"))
     }

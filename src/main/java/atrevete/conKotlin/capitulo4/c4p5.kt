@@ -10,8 +10,8 @@ import java.lang.Exception
 fun main() {
     var contar=0
     try {
-        File("/tmp/kotlin/f3.txt").forEachLine { contar++ }  // 1
-        println("El fichero tiene $contar líneas")                    // 2
+        File("/tmp/kotlin/f3.txt").forEachLine { contar++ }  // [1]
+        println("El fichero tiene $contar líneas")                    // [2]
     } catch (e: Exception) {
         println(e)
     }

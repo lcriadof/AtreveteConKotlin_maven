@@ -12,6 +12,7 @@ import org.xmlpull.v1.XmlPullParserFactory
 import java.io.File
 import java.io.StringReader
 import java.lang.Exception
+import java.net.URL
 
 
 fun main(){
@@ -19,8 +20,16 @@ fun main(){
     val url:String= recursos::class.java.getResource(directorioRaiz).path // 1
     println("url: $url")
 
-    val ficheroXsd=url+"oec.xsd"   // 2
-    val ficheroXml=url+"KOI-0316.xml"   // 3, pruebe también con Alpha Centauri
+
+    // este codigo es para procesar ficheros XML descargados desde github
+    val fuente = URL("https://raw.githubusercontent.com/OpenExoplanetCatalogue/" +
+            "open_exoplanet_catalogue/master/systems_kepler/KOI-0001.xml")  // 2
+    val destino = File(url, "KOI-0001.xml") // 3
+    destino.writeBytes(fuente.readBytes()) // 4
+    // fin del proceso de descarga
+
+    val ficheroXsd=url+"oec.xsd"   // 5
+    val ficheroXml=url+"KOI-0001.xml" // 6, pruebe también con "Alpha Centauri.xml" y con "KOI-0316.xml"
     val fxml=fichXML(ficheroXml,ficheroXsd,"planet",7,true) // 4
     fxml.usar()
     fxml.leer()

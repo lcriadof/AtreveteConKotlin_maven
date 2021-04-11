@@ -5,5 +5,5 @@ Autor: http://luis.criado.online/index.html
 package atrevete.conKotlin.capitulo4
 
 fun main() {
-       println("¡Hola Mundo!"); // 1
+       println("¡Hola Mundo!"); // [1]
 }

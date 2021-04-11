@@ -5,10 +5,8 @@ Autor: http://luis.criado.online/index.html
 package atrevete.conKotlin.capitulo7.fichero.rdf
 
 import atrevete.conKotlin.capitulo7.fichero.recursos
-import org.apache.jena.rdf.model.Model
-import org.apache.jena.rdf.model.ModelFactory
-import org.apache.jena.rdf.model.RDFNode
-import org.apache.jena.rdf.model.Resource
+import com.hp.hpl.jena.vocabulary.DCTerms.subject
+import org.apache.jena.rdf.model.*
 import org.apache.jena.vocabulary.VCARD
 import java.io.File
 import java.io.FileInputStream
@@ -16,16 +14,16 @@ import java.io.FileOutputStream
 
 
 fun main(){
-    val model = ModelFactory.createDefaultModel()  //1 // Creamos un modelo vacio
+    val model = ModelFactory.createDefaultModel()  // [1] // Creamos un modelo vacio
 
     val personURI = "http://www.luis.criado.online"
-    val luisCriado = model.createResource(personURI) // 2  // Creamos el recurso
+    val luisCriado = model.createResource(personURI) // [2]  // Creamos el recurso
 
     val nombre:String="Luis"
-    luisCriado.addProperty(VCARD.FN, nombre) // 3 Añadimos una propiedad
+    luisCriado.addProperty(VCARD.FN, nombre) // [3] Añadimos una propiedad
 
     val nombreComleto:String="luis.criado.fernandez@gmail.com"
-    luisCriado.addProperty(VCARD.EMAIL, nombreComleto) // 4 Añadimos una propiedad
+    luisCriado.addProperty(VCARD.EMAIL, nombreComleto) // [4] Añadimos una propiedad
 
     val directorioRaiz:String="/rdf/"
     var url:String= recursos::class.java.getResource(directorioRaiz).path  // 4 definimos el path de trabajo
@@ -44,19 +42,30 @@ fun main(){
        model2.read(FileInputStream( url+"modelo2.rdf"), ""); // 9  importamos datos
 
 
-    val stmt = model2.listStatements().nextStatement() // 10 preparamos el modelo para lectura
 
+/*
     var subject = stmt.getSubject() // 11 obtenemos el sujeto
     var predicate = stmt.getPredicate() //  12 obtenemos el predicado
     var `object`: RDFNode = stmt.getObject() // 13 obtenemos el objetot
 
-    // mostramos la tripleta
-    println("sujeto [" + subject.toString() + "]");
-    println("predicado[" + predicate.toString() + "] ");
-    if (`object` is Resource) {
-        print("recurso [$`object` ]")
-    } else {         // object is a literal
-        print("recurso_literal[$`object`]")
+
+ */
+
+
+
+    var stmt:Statement
+    var stmtbak:Statement
+    while( true  ) {
+        stmt = model2.listStatements().nextStatement() // 10 preparamos el modelo para lectura
+         println("sujeto: " + stmt.getSubject().toString()) // 11 obtenemos el sujeto
+        println("predicado: " + stmt.getPredicate().toString()) //  12 obtenemos el predicado
+        println("objeto: " + stmt.getObject().toString()) // 13 obtenemos el objetot
+        stmtbak=stmt
+        if (stmt.getSubject().toString().equals( stmtbak.getSubject().toString()) and
+                stmt.getPredicate().toString().equals( stmtbak.getPredicate().toString()) and
+                stmt.getObject().toString().equals( stmtbak.getObject().toString())  ){
+            break
+        }
     }
 
 
@@ -74,11 +83,35 @@ fun main(){
 
     // merge the Models
     val modeloUnido: Model = modeloA.union(modeloB) // unimos dos modelos
+    modeloUnido.write(FileOutputStream(url+"modeloUnido.rdf"), "RDF/XML-ABBREV");
 
 
-    modeloUnido.write(FileOutputStream("modeloUnido.rdf"), "RDF/XML-ABBREV");
+
+    val modeloOWL = ModelFactory.createDefaultModel() // Creamos un modelo vacio
+    url= recursos::class.java.getResource("/owl/").path  // 4 definimos el path de trabajo
+    modeloOWL.read(FileInputStream(url+"val1.owl"), "");
+// ---- leemos
+    println("\n\nLeemos modelo unido:")
+    var stmt2:Statement=modeloOWL.listStatements().nextStatement() // 10 preparamos el modelo para lectura
+    var sujeto:String=""
+    var sujetoBak:String=""
+    while( true  ) {
+        sujeto=stmt2.getSubject().toString()
+          println("sujeto: " +sujeto )
+          println("predicado: " + stmt2.getPredicate().toString())
+          println("objeto: " +stmt2.getObject().toString() )
+        sujetoBak=sujeto
+        println("objetoBak: $sujetoBak")
+        stmt2 = modeloOWL.listStatements().nextStatement() // 10 preparamos el modelo para lectura
+        sujeto=stmt2.getObject().toString()
+        println("sujeto: $sujeto")
+
+        if (sujeto.equals(sujetoBak)  ){
+            break
+        }
 
 
+    }
 
 
 }
