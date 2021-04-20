@@ -4,7 +4,7 @@ Autor: http://luis.criado.online/index.html
  */
 package io.github.lcriadof.atrevete.kotlin.capitulo8
 
-import atrevete.conKotlin.capitulo8.basedatos
+import io.github.lcriadof.atrevete.conKotlin.capitulo8.basedatos
 import java.sql.*
 
 

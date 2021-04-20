@@ -2,7 +2,7 @@
 Atrévete con Kotlin (libro en preparación) ISBN: 9798596367164
 Autor: http://luis.criado.online/index.html
  */
-package atrevete.conKotlin.capitulo8
+package io.github.lcriadof.atrevete.conKotlin.capitulo8
 
 import java.sql.*
 

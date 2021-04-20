@@ -8,7 +8,7 @@ import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.ResultSet
 import java.sql.SQLException
-import atrevete.conKotlin.capitulo8.*
+import io.github.lcriadof.atrevete.conKotlin.capitulo8.*
 import kotlin.collections.HashMap
 
 fun main(){

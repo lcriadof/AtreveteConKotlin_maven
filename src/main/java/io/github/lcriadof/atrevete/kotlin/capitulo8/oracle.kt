@@ -6,7 +6,7 @@ package io.github.lcriadof.atrevete.kotlin.capitulo8
 
 
 
-import atrevete.conKotlin.capitulo8.basedatos
+import io.github.lcriadof.atrevete.conKotlin.capitulo8.basedatos
 import java.sql.DriverManager
 import java.sql.ResultSet
 import java.sql.SQLException
