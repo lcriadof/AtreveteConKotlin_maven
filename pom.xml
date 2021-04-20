@@ -113,6 +113,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- libreria matemática para procesado de señales DSP -->
+        <dependency>
+            <groupId>com.github.psambit9791</groupId>
+            <artifactId>jdsp</artifactId>
+            <version>0.6.0</version>
+        </dependency>
+
         <!-- epublib -->
         <dependency>
             <groupId>nl.siegmann.epublib</groupId>

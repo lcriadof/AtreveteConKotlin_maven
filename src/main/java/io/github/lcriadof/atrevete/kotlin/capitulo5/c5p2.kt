@@ -1,0 +1,15 @@
+/*
+Atrévete con Kotlin ISBN: 9798596367164
+Autor: http://luis.criado.online/index.html
+ */
+package io.github.lcriadof.atrevete.kotlin.capitulo5
+
+fun main(){
+    // programa c5p2.kt
+    fun FraseDelDia(frase:String):Unit{          //1
+         val numLetras=frase.length
+        println("La frase [$frase] tiene $numLetras letras")
+    }
+    FraseDelDia("Cada día es una nueva oportunidad para cambiar tu vida")               //2
+    FraseDelDia("Pienso, luego existo")                                                 // 3
+}
