@@ -113,7 +113,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- libreria matemática para procesado de señales DSP -->
+        <!-- libreria matemática para procesado de señales DSP (Sambit Paul)-->
         <dependency>
             <groupId>com.github.psambit9791</groupId>
             <artifactId>jdsp</artifactId>
