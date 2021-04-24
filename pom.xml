@@ -94,6 +94,10 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -118,6 +122,13 @@
             <groupId>com.github.psambit9791</groupId>
             <artifactId>jdsp</artifactId>
             <version>0.6.0</version>
+        </dependency>
+
+        <!-- CoreNLP  created by the Stanford NLP Group -->
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>4.0.0</version>
         </dependency>
 
         <!-- epublib -->
