@@ -3,10 +3,11 @@
 
 Libro dirigido a programadores que quieran aprender Kotlin, especialmente si proceden de Java. 
 
-Toda la esencia del libro se organiza bajo la parte denominada “experimentando con kotlin en back end”, mientras que la parte de “Anexo” se dedica a complementar algunos aspectos que se utilizan en el libro pero que no tuvieron un capítulo al salirse de la implementación. Sin embargo, en este anexo si se ofrece una referencia rápida de la sintaxis de kotlin.
+Toda la esencia del libro se organiza bajo la parte denominada “experimentando con kotlin en back end”, mientras que la parte de “Anexo” se dedica a complementar algunos aspectos que se utilizan en el libro pero que no tuvieron un capítulo al salirse de la implementación. 
 
 El LIBRO INCORPORA LA EXPLICACIÓN DE TODO EL CÓDIGO FUENTE <br>
 
+[Indice] de contenido del libro(indice.txt)
 
 Véase [licencia](LICENSE.txt)
 Autor: http://luis.criado.online/index.html
