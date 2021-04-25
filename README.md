@@ -1,5 +1,5 @@
 # AtreveteConKotlin
-[![Twitter](https://twitter.com/lcriadof)
+
 Atrévete con Kotlin ISBN: 9798596367164 (libro en preparación)<br>
 Autor: http://luis.criado.online/index.html
 
