@@ -1,5 +1,5 @@
 # AtreveteConKotlin
-
+![alt text](http://luis.criado.online/cv/imagenes/Portada_AtreveteConKotlin_ver3.jpg)
 Atrévete con Kotlin ISBN: 9798596367164 (libro en preparación)<br>
 Autor: http://luis.criado.online/index.html
 
