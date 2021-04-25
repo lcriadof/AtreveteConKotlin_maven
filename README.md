@@ -1,5 +1,5 @@
 # AtreveteConKotlin
-
+[![Twitter](https://img.shields.io/twitter/follow/stanfordnlp.svg?style=social&label=Follow)](https://twitter.com/lcriadof)
 Atrévete con Kotlin ISBN: 9798596367164 (libro en preparación)<br>
 Autor: http://luis.criado.online/index.html
 
