@@ -23,9 +23,16 @@ Véase [licencia](licencia.md)
   [Ejemplos](https://github.com/castagna/jena-examples/tree/master/src/main/java/org/apache/jena/examples)
 
 #### Bases de Datos:
+- [sqlite](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc) - Driver Java para SQLite.
+- [MySql](https://mvnrepository.com/artifact/mysql/mysql-connector-java) - Driver Java para MySql.
+- [Oracle](https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8) - Driver Java para Oracle.
+- [postgreSQL](https://mvnrepository.com/artifact/org.postgresql/postgresql) - Driver Java para postgreSQL.
+- [redis](https://mvnrepository.com/artifact/redis.clients/jedis) - Driver Java para redis.
+- [AllegroGraph](https://mvnrepository.com/artifact/com.franz/agraph-java-client) - Driver Java para AllegroGraph.
 
 #### Misceláneo:
-- [jdsp](https://github.com/psambit9791/jDSP) - libreria Java para el procesado de señales
+- [jdsp](https://github.com/psambit9791/jDSP) - libreria Java para el procesado de señales digitales
+
 
 
 
