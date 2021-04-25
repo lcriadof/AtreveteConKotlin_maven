@@ -7,7 +7,7 @@ Toda la esencia del libro se organiza bajo la parte denominada “experimentando
 
 El LIBRO INCORPORA LA EXPLICACIÓN DE TODO EL CÓDIGO FUENTE <br>
 
-[Indice] de contenido del libro(indice.txt)
+[Indice](indice.txt) de contenido del libro
 
 Véase [licencia](LICENSE.txt)
 Autor: http://luis.criado.online/index.html
