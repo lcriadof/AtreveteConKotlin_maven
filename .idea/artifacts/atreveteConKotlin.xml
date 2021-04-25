@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="atreveteConKotlin">
+    <output-path>$PROJECT_DIR$/out/artifacts/atreveteConKotlin</output-path>
+    <root id="archive" name="atreveteConKotlin.jar">
+      <element id="module-output" name="AtreveteConKotlin_maven" />
+    </root>
+  </artifact>
+</component>
