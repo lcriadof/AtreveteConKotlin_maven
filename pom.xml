@@ -132,6 +132,16 @@
             <version>4.0.0</version>
         </dependency>
 
+
+
+
+
+
+        <!-- Ficheros -->
+        <!-- ========================================= -->
+
+
+
         <!-- epublib -->
         <dependency>
             <groupId>nl.siegmann.epublib</groupId>
@@ -205,13 +215,7 @@
         </dependency>
 
 
-        <!-- AllegroGraph -->
-        <!-- https://mvnrepository.com/artifact/com.franz/agraph-java-client -->
-        <dependency>
-            <groupId>com.franz</groupId>
-            <artifactId>agraph-java-client</artifactId>
-            <version>3.0.3</version>
-        </dependency>
+
 
 
         <!-- Servlets -->
@@ -222,6 +226,11 @@
             <version>3.0.1</version>
             <scope>provided</scope>
         </dependency>
+
+
+
+        <!-- BBDD -->
+        <!-- ========================================= -->
 
         <!-- sqlite -->
         <!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
@@ -264,6 +273,17 @@
             <version>3.3.0</version>
         </dependency>
 
+
+        <!-- AllegroGraph -->
+        <!-- https://mvnrepository.com/artifact/com.franz/agraph-java-client -->
+        <dependency>
+            <groupId>com.franz</groupId>
+            <artifactId>agraph-java-client</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+
+
+        <!-- ========================================= -->
         <!-- android -->
         <dependency>
             <groupId>com.google.android</groupId>
